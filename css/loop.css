@@ -1,0 +1,29 @@
+.loop-wrapper{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.loop-item{
+  list-style: none;
+  background: #efefef;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.loop-item-even{
+  background: #aaa;
+}
+
+.loop-item-first{
+  background: #777;
+  color: white;
+}
+
+.loop-item-last{
+  background: #444;
+  color: white;
+}
+

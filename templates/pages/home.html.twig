@@ -1,0 +1,16 @@
+{% extends 'base/layout.html.twig' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block body %}
+
+<DIV class="homepage">
+  <UL>
+    {% for eg in examples %}
+        <li> <a href="{{ eg.1 }}"> {{ eg.0 }} </a> </LI>
+    {% endfor %}
+  </UL>
+</DIV>
+
+{% endblock %}
+

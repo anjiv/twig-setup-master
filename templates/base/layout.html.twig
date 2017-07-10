@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %} New Page {% endblock %}</title>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css"></link>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      {{ include('components/header.html.twig' , { 'homeTitle' : 'Home' , 'homeLink' : '/'}) }}
+      <content class="content">
+        {% block body %} New Page Body {% endblock %}
+      </content>
+      {{ include('components/footer.html.twig') }}
+    </div>
+  </body>
+</html>

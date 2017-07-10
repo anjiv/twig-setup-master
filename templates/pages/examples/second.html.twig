@@ -1,0 +1,61 @@
+<div class="second_demo">
+<h2>{{ name|striptags|title }}</h2>
+{{ list|join(', ') }}
+<br>
+{% filter upper %}
+  This is anjali
+{% endfilter %}
+<br>
+{% for i in range(0, 3) %}
+    {{ i }},
+{% endfor %}
+<br>
+{% for i in range(low=1, high=10, step=2) %}
+    {{ i }},
+{% endfor %}
+<br>
+{{ "now"|date('d/m/Y H:i', "Europe/Paris") }}
+<br>
+{% for user in users %}
+  <li>{{ user.username|e }}</li>
+{% endfor %}
+{% autoescape %}
+    Everything will be automatically escaped in this block (using the HTML strategy)
+{% endautoescape %}
+{% import "pages/examples/demo.html" as demo %}
+<p>{{ demo.input('username', 'asd') }}</p>
+{{ 'Twig'|upperCustom }}
+<br>
+{% filter lower|raw %}
+    <strong>SOME TEXT</strong>
+{% endfilter %}
+{% for letter in 'a' .. 'z' %}
+  {{ letter }}
+{% endfor %}
+{% for letter in 'a' .. 'z' %}
+  {{ letter|upper}}
+{% endfor %}
+
+<ul>
+    {% for key in list|keys %}
+        <li>{{ key }}</li>
+    {% endfor %}
+</ul>
+{% set items = ['a', 'b', 'c', 'd', 'e', 'f', 'g'] %}
+
+<table>
+{% for row in items|batch(5, 'No item') %}
+    <tr>
+        {% for column in row %}
+            <td>{{ column }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+{% set fruits = ['apple', 'orange', 'citrus'] %}
+
+{% for i in 0..10 %}
+    {{ cycle(fruits, i) }}
+{% endfor %}
+{{ -9800.333|number_format(1, '.', ',') }}
+</div>

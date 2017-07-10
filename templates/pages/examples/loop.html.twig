@@ -1,0 +1,23 @@
+{% extends 'base/layout.html.twig' %}
+
+{% block title %} Loop Example {% endblock %}
+
+{% block body %}
+  <link rel="stylesheet" type="text/css" href="/css/loop.css">
+  <h3> {{ items|length }} Lists </h3>
+  <UL class="loop-wrapper">
+    {% for item in items %}
+        <li class="loop-item loop-item-{{ loop.index }} {{ loop.last  ? 'loop-item-last' : ''}} {{ loop.first ? 'loop-item-first' : ''}} {{ loop.index is divisible by(2) ? 'loop-item-even' : 'loop-item-odd'}}">
+          <div> Name : {% autoescape false %}{{ item }} {% endautoescape %}</div>
+          <div> Index: {{ loop.index }} </div>
+          <div> Indexed with 0: {{ loop.index0 }} </div>
+          <div> Reversed Index: {{ loop.revIndex }} </div>
+          <div> Reversed Indexed with 0: {{ loop.revIndex }} </div>
+          </LI>
+        {% else %}
+          oops!
+    {% endfor %}
+  </UL>
+
+{% endblock %}
+

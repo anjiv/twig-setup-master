@@ -1,0 +1,24 @@
+{% extends 'base/layout.html.twig' %}
+
+{% block title %} Simple Example {% endblock %}
+
+{% block body %}
+
+<DIV class="example-page">
+  <SPAN>
+    {% if (user.gender == 'male') %}
+       Mr.
+    {% elseif (user.gender == 'female') %}
+       Mrs.
+    {% endif %}
+    {{ user.name.first ~ user.name['last'] }}
+  </SPAN>
+  <UL>
+    {% for item in user.items %}
+        <li> {{ item }} </LI>
+    {% endfor %}
+  </UL>
+</DIV>
+
+{% endblock %}
+
